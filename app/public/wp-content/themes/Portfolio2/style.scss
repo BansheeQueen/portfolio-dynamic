@@ -1,0 +1,1207 @@
+/* Variables */
+
+/* colors */
+$color-light: #EDEDED;
+$color-cyan: #69B0AC;
+$color-cyan-dark: #345856;
+$color-cyan-light: #99D9D6;
+$color-dark: #4E4B4B;
+$color-blue: #9CDCFE;
+$portfolio-hover: #69b0acea;
+
+//indicator movement variables, it allows easy styling modifications of main menu indicator
+$li-width: 60px; //each li's width
+$li-height: 60px; // each li's margin
+$li-margin: 8px; // each li's margin
+$li-translate: 0 -$li-width - $li-margin*2; //math for indicator movement when li is clicked
+$startIndex: 0; //indicates at which menu button indicator starts on page refresh. When set to 0 it's deafult is the first left
+$li-num: 5; //change this for more menu li elements
+
+// Skill number variable, change it if you want to add more skills. It vary correct behavoiur of skill fade in animation.
+$skill-num: 10;
+
+// fonts variables
+$font-sans: 'Open Sans',
+'Verdana',
+sans-serif;
+
+/* Mixins */
+
+// Mixin with transition prefixes 
+@mixin transition($style, $type, $time) {
+    transition: $style $type $time;
+    -webkit-transition: $style $type $time;
+    -moz-transition: $style $type $time;
+    -ms-transition: $style $type $time;
+    -o-transition: $style $type $time;
+}
+
+
+// Mixin for transform Y with prefixes
+@mixin transform-translateY($deg) {
+    transform: translateY($deg);
+    -webkit-transform: translateY($deg);
+    -moz-transform: translateY($deg);
+    -ms-transform: translateY($deg);
+    -o-transform: translateY($deg);
+}
+
+// Mixin for transform X  with prefixes
+@mixin transform-translateX($deg, $multiply: 1) {
+    transform: translateX(calc(#{$deg} * #{$multiply}));
+    -webkit-transform: translateX(calc(#{$deg} * #{$multiply}));
+    -moz-transform: translateX(calc(#{$deg} * #{$multiply}));
+    -ms-transform: translateX(calc(#{$deg} * #{$multiply}));
+    -o-transform: translateX(calc(#{$deg} * #{$multiply}));
+}
+
+
+// Mixin for transform (both ways) with prefixes
+@mixin transform-translate($deg1, $deg2) {
+    transform: translate($deg1, $deg2);
+    -webkit-transform: translate($deg1, $deg2);
+    -moz-transform: translate($deg1, $deg2);
+    -ms-transform: translate($deg1, $deg2);
+    -o-transform: translate($deg1, $deg2);
+}
+
+// Mixin for scale with prefixes
+@mixin scale($deg1, $deg2) {
+    transform: scale($deg1, $deg2);
+    -webkit-transform: scale($deg1, $deg2);
+    -moz-transform: scale($deg1, $deg2);
+    -ms-transform: scale($deg1, $deg2);
+    -o-transform: scale($deg1, $deg2);
+}
+
+
+// Mixin for border radius prefixes
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+}
+
+
+/*
+Mixin for main menu indicator styling. It depending completely on declared variables and set correct values even when menu styling is changed.
+*/
+@mixin indicator-selector($shadow-offset-x, $shadow-offset-y) {
+    content: '';
+    position: absolute;
+    top: 29px;
+    width: calc(#{$li-width} / 2);
+    height: calc(#{$li-height} /2);
+    background: transparent;
+    box-shadow: $shadow-offset-x $shadow-offset-y $color-light;
+    @include border-radius(50%);
+
+}
+
+// Mixin for animation delay prefixes
+@mixin animation-delay($time) {
+    animation-delay: calc(#{$time}/10);
+    -webkit-animation-delay: calc(#{$time}/10);
+    -moz-animation-delay: calc(#{$time}/10);
+    -ms-animation-delay: calc(#{$time}/10);
+    -o-animation-delay: calc(#{$time}/10);
+}
+
+// Function for top navigation fading in with page refresh. You can change number of li elements in menu trough li-num variable. Function change animation-delay property for every li in top navigation and calculates correct translateX property using mixin.
+
+@for $i from $startIndex through $li-num {
+    #item-#{$i} {
+        @include animation-delay(#{$i}s);
+
+        &.active {
+            &~.indicator {
+                @include transform-translateX(#{$li-translate}, #{$i});
+
+            }
+        }
+    }
+}
+
+
+// Functions for setting sections animations delay
+// Skill section
+@for $i from $startIndex through $skill-num {
+    #skill-#{$i} {
+        @include animation-delay(#{$i*1.5}s);
+    }
+}
+
+
+
+// Styling
+
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-family: $font-sans;
+    overflow-x: hidden;
+}
+
+/* Typography  */
+h1 {
+    margin: 1rem 0;
+    color: $color-light;
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+
+}
+
+h2 {
+    color: $color-dark;
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+
+    .underline {
+        content: '';
+        display: block;
+        width: 0%;
+        max-width: 100%;
+        height: 3px;
+        background: linear-gradient(100deg, $color-cyan-dark, $color-cyan-light);
+        border-radius: 20px;
+        @include transition(all, linear, 0.2s);
+    }
+}
+
+h3 {
+    color: $color-light;
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+}
+
+code {
+    color: $color-blue;
+}
+
+p {
+    color: $color-dark;
+    font-size: 0.9rem;
+    line-height: 200%;
+}
+
+a {
+    color: $color-cyan;
+    @include transition(all, linear, 0.5s);
+    text-decoration: none;
+
+    &:hover,
+    :visited {
+        color: $color-cyan-dark;
+    }
+}
+
+
+//  Buttons
+button {
+    &.navbar-toggle {
+        display: none;
+    }
+}
+
+
+.btn-primary {
+    font-size: 0.8rem;
+    border-color: $color-cyan;
+    background-color: $color-cyan-light;
+    color: $color-dark;
+    box-shadow: 0px 0px 5px rgba(72, 72, 72, 0.6);
+
+    &:hover {
+        background-color: $color-cyan;
+    }
+}
+
+
+/* Navigation */
+header {
+    &.top-navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        padding: 0px;
+        background: $color-light;
+        z-index: 3;
+    }
+}
+
+.mobile-banner-title {
+    position: fixed;
+    display: none;
+    top: 8px;
+    left: 20px;
+    right: 50px;
+    height: 60px;
+    z-index: 1;
+
+    h1,
+    h2 {
+        display: inline-block;
+        margin: 0px;
+        font-size: 0.8rem;
+        color: $color-cyan;
+        text-transform: none;
+    }
+
+    h3 {
+        font-size: 0.8rem;
+        color: $color-dark;
+    }
+
+    button {
+        position: absolute;
+        top: 8px;
+        left: 250px;
+        z-index: 10;
+
+        &:hover {
+            background-color: $color-cyan;
+        }
+    }
+}
+
+.navbar-toggle {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    display: none;
+    z-index: 4;
+
+    span {
+        position: relative;
+        display: block;
+        margin: 4px;
+        width: 35px;
+        height: 3px;
+        background: $color-dark;
+        transform-origin: left center;
+        @include transition(all, linear, 0.3s);
+    }
+
+    &.open {
+        span {
+            &:nth-child(1) {
+                transform: rotate(45deg);
+                top: -6px;
+                left: 6px;
+
+            }
+
+            &:nth-child(2) {
+                @include transform-translateX(200%, 1);
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+                top: 5px;
+                left: 5px;
+            }
+        }
+    }
+}
+
+
+ul {
+    &.top-menu {
+        position: relative;
+        height: 60px;
+        margin: 0;
+        padding: 0;
+
+        &>li {
+            margin: 0.5rem;
+            opacity: 0;
+            z-index: 2;
+            animation: linear 0.3s opacity forwards;
+
+            a {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: $li-width;
+                height: $li-height;
+                text-align: center;
+                font-weight: 500;
+                color: $color-dark;
+                z-index: 2;
+                @include transition(all, linear, 0.5s);
+
+
+                .icon {
+                    position: relative;
+                    display: block;
+                    line-height: 65px;
+                    font-size: 1.5rem;
+                    @include transition(all, linear, 0.5s);
+                }
+
+                .text {
+                    position: absolute;
+                    background: $color-cyan;
+                    color: $color-light;
+                    padding: 2px 7px;
+                    font-weight: 400;
+                    font-size: 0.55rem;
+                    letter-spacing: 0.05rem;
+                    opacity: 0;
+
+                    @include border-radius(15px);
+                    @include transition(all, linear, 0.5s);
+                    @include transform-translateY(-15px);
+                }
+
+            }
+
+            &:hover {
+                a {
+                    color: $color-cyan;
+                }
+            }
+
+            &.active {
+                a {
+                    .icon {
+                        color: $color-cyan;
+                        @include transform-translateY(32px);
+
+                    }
+
+                    .text {
+                        opacity: 1;
+                        @include transform-translateY(0px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+        .indicator {
+            position: absolute;
+            top: 50%;
+            width: calc(#{$li-width} + 10px);
+            height: calc(#{$li-height} + 10px);
+            margin-right: 3px;
+            background: $color-light;
+            z-index: 1;
+            @include transition(all, linear, 0.5s);
+            @include border-radius(100%);
+
+            &:before {
+                left: -29px;
+                @include indicator-selector(10px, -18px);
+            }
+
+            &:after {
+                right: -29px;
+                @include indicator-selector(-10px, -18px);
+            }
+        }
+
+
+
+.mobile-menu {
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background: rgba(72, 72, 72, 0.8);
+    opacity: 0;
+    @include transition(all, linear, 0.1s);
+
+    &.open {
+        opacity: 1;
+        left: 0;
+
+        .menu-box {
+            transform: translateX(0%);
+            -webkit-transform: translateX(0%);
+            -moz-transform: translateX(0%);
+            -ms-transform: translateX(0%);
+            -o-transform: translateX(0%);
+        }
+    }
+
+    .menu-box {
+        float: right;
+        width: 40%;
+        max-width: 300px;
+        min-width: 200px;
+        height: calc(100vh - 60px);
+        padding: 20px;
+        background: $color-light;
+        @include transform-translateX(300%, 1);
+        @include transition(all, linear, 0.5s);
+
+        .navigation {
+            .menu-item {
+                display: inline-flex;
+                padding: 4px;
+                margin: 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+                a {
+                    color: $color-dark;
+
+                    &:hover {
+                        color: $color-cyan;
+                    }
+
+                    .icon {
+                        display: inline-block;
+                        width: 30px;
+                        font-size: 1.2rem;
+
+                    }
+
+                    ;
+                }
+
+            }
+
+            .indicator {
+                display: none;
+            }
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -49px;
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            @include border-radius(50%);
+            box-shadow: 30px -30px $color-light;
+            z-index: 1;
+
+        }
+    }
+
+}
+
+@media screen and (max-width: 680px) {
+    header {
+        &.top-navigation {
+            .navbar-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-banner-title {
+                display: block;
+            }
+        }
+    }
+}
+
+//  Banner section
+section {
+    &.banner {
+        height: calc(100vh - 60px);
+        margin-top: 60px;
+        background-image: url(assets/images/background.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-blend-mode: color-dodge;
+        background-color: $color-dark;
+    }
+}
+
+.parallax-scene {
+    width: 100%;
+    height: 100vh;
+    padding-top: 60px;
+
+    .code {
+        width: 100%;
+        height: 100vh;
+
+        #code-1 {
+            position: absolute;
+            top: 20%;
+            left: 0;
+            margin-top: 60px;
+        }
+
+        #code-2 {
+            position: absolute;
+            top: 40%;
+            right: -10%;
+        }
+
+        #code-3 {
+            position: absolute;
+            top: 60%;
+            right: 10%;
+        }
+
+        #code-4 {
+            position: absolute;
+            top: 60%;
+            left: -10%;
+        }
+
+        #code-5 {
+            position: absolute;
+            top: 70%;
+            left: 30%;
+        }
+
+        & #code-6 {
+            position: absolute;
+            top: 20%;
+            left: 40%;
+        }
+    }
+}
+
+.banner-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    @include transform-translate(-50%, -50%);
+    z-index: 2;
+
+    h1,
+    h2,
+    h3 {
+        text-shadow: 0px 5px 1px $color-dark;
+    }
+
+    h2 {
+        color: $color-cyan-light;
+    }
+
+    h3 {
+        display: block;
+        opacity: 0;
+        transform: translateX(-200%);
+        animation: 0.8s linear forwards fadeIn;
+    }
+
+}
+
+.waves {
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 960px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 2.3rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+}
+
+
+@media screen and (max-width: 680px) {
+    .banner-title {
+        display: none;
+    }
+}
+
+
+
+// About me section
+section {
+    &.about {
+        margin-top: 60px;
+
+        h2 {
+            display: inline-block;
+
+            .underline {
+                content: '';
+                display: block;
+                width: 0%;
+                max-width: 100%;
+                height: 3px;
+                background: linear-gradient(100deg, $color-cyan-dark, $color-cyan-light);
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+.picture-container {
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    @include transition(all, linear, 0.5s);
+    @include transform-translate(10%, 0%);
+
+    .picture-bg {
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+        background: $color-light;
+        border-radius: 50%;
+        box-shadow: -3px 4px 3px rgba(0, 0, 0, 0.3);
+
+        & .about-me-picture {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 5px 0px;
+            border-radius: 50%;
+        }
+    }
+
+    .blob {
+        position: absolute;
+        bottom: -40px;
+        left: -5%;
+        width: 35vw;
+        max-width: 450px;
+        z-index: -1;
+        opacity: 0.6;
+        @include transition(all, linear, 0.8s);
+        @include transform-translate(40%, 0%);
+    }
+
+    &.active {
+        opacity: 1;
+        @include transform-translate(0%, 0%);
+        .blob {
+            @include transform-translate(0%, 0%);
+        }
+    }
+
+}
+
+
+
+@media screen and (max-width: 980px) {
+
+    .picture-container {
+        .blob {
+            width: 45vw;
+        }
+
+    }
+
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .picture-container {
+        .blob {
+            width: 50vw;
+        }
+
+    }
+
+}
+
+
+@media screen and (max-width: 750px) {
+
+    .picture-container {
+        margin: 50px auto;
+        width: 50%;
+
+        .blob {
+            width: 60vw;
+        }
+
+    }
+
+}
+
+// Skills
+section {
+    &.skills {
+        margin: 80px 0 20px 0;
+
+        h2 {
+            display: inline-block;
+        }
+    }
+}
+
+.skill-container {
+    padding: 50px;
+    font-size: 5rem;
+    overflow: hidden;
+    opacity: 0;
+    @include transition(all, linear, 0.5s);
+
+    i {
+        background: linear-gradient(45deg, $color-cyan-light, $color-cyan-dark);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @include transition(all, linear, 0.3s);
+        cursor: pointer;
+
+        &:hover {
+            @include transform-translateY(5px);
+
+            +p {
+                @include transform-translateY(-5px);
+            }
+        }
+
+    }
+
+    p {
+        font-size: 1rem;
+        color: $color-dark;
+        text-align: center;
+        font-weight: 600;
+        @include transform-translateY(500%);
+        @include transition(all, linear, 0.3s);
+
+    }
+
+}
+
+.skills-container {
+    &.active {
+        .skill-container {
+            animation: fadeIn 0.5s forwards linear;
+
+        }
+    }
+}
+
+// Portfolio
+section {
+    &.portfolio {
+        position: relative;
+        padding-top: 150px;
+        background: $color-light;
+
+        h2 {
+            display: inline-block;
+        }
+
+
+        .waves {
+            top: 0;
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.projects-container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    gap: 10px 0;
+
+    .project-container {
+        position: relative;
+        flex-basis: calc(100% /3);
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        @include scale(0, 0);
+        @include transition(all, linear, 0.5s);
+        @include border-radius(500px);
+
+
+        img {
+            width: 100%;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: $portfolio-hover;
+            text-align: center;
+            @include transition(0.5s, all, linear);
+            transition-delay: 0.5s;
+
+            p {
+                margin-bottom: 0;
+                color: $color-light;
+
+            }
+
+            h3,
+            p,
+            .tags {
+                flex-basis: 100%;
+                @include scale(1, 1);
+                @include transition(0.5s, all, linear);
+                transition-delay: 0s;
+            }
+
+            .more {
+                display: block;
+                margin: auto;
+                width: 30%;
+                padding: 2px;
+                border: 1px solid $color-cyan-dark;
+                color: $color-cyan-dark;
+                font-size: 0.7rem;
+                letter-spacing: 1px;
+                @include border-radius(20px);
+
+                &:hover {
+                    color: $color-light;
+                    border-color: $color-light;
+                }
+
+            }
+
+        }
+
+        &:hover {
+            .overlay {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                @include transform-translate(0%, 0%);
+                transition-delay: 0s;
+
+                h3,
+                p,
+                .tags {
+                    transition-delay: 0.5s;
+                    @include scale(1, 1)
+                }
+
+            }
+        }
+    }
+
+}
+
+.projects-container {
+    &.active {
+        .project-container {
+            @include scale(1, 1);
+            @include border-radius(0px);
+        }
+    }
+}
+
+.project-container {
+    &:nth-child(3n + 1) {
+        .overlay {
+            @include transform-translate(-110%, 0%);
+        }
+    }
+
+    &:nth-child(3n + 2) {
+        .overlay {
+            @include transform-translate(0%, -110%);
+        }
+    }
+
+    &:nth-child(3n + 3) {
+        .overlay {
+            @include transform-translate(110%, 0%);
+        }
+    }
+
+}
+
+.project-container {
+    .overlay {
+        .tags {
+            p {
+                display: inline-block;
+                margin: 10px;
+                padding: 5px;
+                font-size: 0.7rem;
+                color: $color-dark;
+                background-color: $color-light;
+                background-size: 100%;
+                @include border-radius(20px);
+            }
+
+
+        }
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .projects-container {
+        .project-container {
+
+            flex-basis: 50%;
+        }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .projects-container {
+        .project-container {
+
+            flex-basis: 80%;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .projects-container {
+        .project-container {
+
+            flex-basis: 100%;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 375px) {
+    .overlay {
+
+        p {
+
+            &.desc {
+                display: none;
+            }
+        }
+    }
+}
+    // FOOTER
+    footer {
+        padding: 80px 50px 10px 50px;
+        background-color: $color-dark;
+        overflow: hidden;
+
+
+        .social {
+            font-size: 3rem;
+            opacity: 0;
+            @include transform-translate(-200%, 0%);
+            @include transition(all, linear, 0.5s);
+            transition-delay: 0.5s;
+
+        }
+
+        h3 {
+            flex-basis: 100%;
+            font-size: 1.5rem;
+            color: $color-cyan;
+            text-align: center;
+            opacity: 0;
+            @include transform-translate(0%, -200%);
+            @include transition(all, linear, 0.5s);
+
+
+        }
+
+        .contact {
+            color: $color-light;
+        }
+
+        .copyright {
+            margin: 30px;
+            font-size: 0.9rem;
+            color: $color-cyan;
+            letter-spacing: 2px;
+            line-height: 150%;
+            text-align: center;
+            opacity: 0;
+            @include transition(all, linear, 0.5s);
+            transition-delay: 0.5s;
+        }
+
+    }
+
+    .contact {
+        margin: auto;
+
+        form {
+            position: relative;
+            width: 80%;
+            min-width: 400px;
+            max-width: 880px;
+            padding: 20px 80px;
+            border: 1px solid $color-cyan;
+            font-size: 0.9rem;
+            line-height: 120%;
+            opacity: 0;
+            @include border-radius(20px);
+            @include transform-translate(0%, 200%);
+            @include transition(all, linear, 0.8s);
+            transition-delay: 0.2s;
+            z-index: 2;
+
+            label {
+                flex-basis: 10%;
+                min-width: 50px;
+                max-width: 80px;
+                margin: 0;
+                padding: 10px 20px;
+                background: $color-cyan;
+                text-align: center;
+            }
+
+            input#email,
+            textarea {
+                padding: 10px;
+                background-color: $color-light;
+                border: 0;
+
+                &:focus-visible {
+                    outline: 2px solid $color-cyan-light;
+                }
+            }
+
+            input#email {
+                flex-basis: 90%;
+            }
+
+            textarea {
+                flex-basis: 90%;
+                margin: 10px 0px 0px 0px;
+                height: 20vh;
+                min-height: 200px;
+
+            }
+
+            .submit {
+                position: relative;
+                flex-basis: 10%;
+                min-width: 50px;
+                margin: 10px 0 0 0;
+                padding: 20px 0;
+                background: $color-cyan-dark;
+                border: 0;
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+                text-align: center;
+                @include border-radius(0);
+
+                &:hover {
+                    background: $color-cyan;
+                }
+            }
+
+
+        }
+    }
+
+    footer {
+        &.active {
+
+            .social,
+            form,
+            h3,
+            .copyright {
+                @include transform-translate(0%, 0%);
+                opacity: 1;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .contact {
+            form {
+                padding: 20px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 996px) {
+        .contact {
+            form {
+                input#email {
+                    flex-basis: calc(90% - 50px);
+                }
+
+                .submit {
+                    flex-basis: 40%;
+                    padding: 10px;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        footer {
+            .social {
+                margin-bottom: 30px;
+
+            }
+        }
+    }
+
+    @media only screen and (max-width: 375px) {
+       .contact {
+            form {
+               margin: 50px;
+
+            }
+        }
+    }
+
+
+
+    // Animations
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateX(-200%);
+        }
+
+        50% {
+            opacity: 0.5;
+            transform: translateX(5%);
+
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0%);
+        }
+    }
+
+    @keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }

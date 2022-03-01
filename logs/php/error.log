@@ -1,0 +1,4 @@
+[26-Feb-2022 18:17:20 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\functions.php on line 57
+[26-Feb-2022 18:17:21 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\functions.php on line 57
+[27-Feb-2022 15:44:55 UTC] PHP Parse error:  syntax error, unexpected ''theme_location'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\header.php on line 33
+[27-Feb-2022 15:52:23 UTC] PHP Parse error:  syntax error, unexpected ''container'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\header.php on line 32
