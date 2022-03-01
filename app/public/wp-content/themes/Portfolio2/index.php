@@ -86,95 +86,17 @@
 
                                 <div class="row">
                                 <div class="col-md-8 offset-md-2 projects-container d-flex justify-content-center flex-wrap">
-                                    <div class="project-container">
-                                        <img src="/assets/images/portfolio1.png" alt="Portfolio Project">
-                                        <div class="overlay">
-                                            <h3>Project name</h3>
-                                            <p class="desc">Project description
-                                            </p>
-                                            <a href="#" class="more">Learn more</a>
-                                            <div class="tags">
-                                                <p class="tag">jQuery</p>
-                                                <p class="tag">Bootstrap</p>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
 
-                                    <div class="project-container">
-                                        <img src="/assets/images/portfolio1.png" alt="Portfolio Project">
-                                        <div class="overlay">
-                                            <h3>Project name</h3>
-                                            <p class="desc">Project description
-                                            </p>
-                                            <a href="#" class="more">Learn more</a>
-                                            <div class="tags">
-                                                <p class="tag">jQuery</p>
-                                                <p class="tag">Bootstrap</p>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
+                                    
+                                    <?php $loop = new WP_Query( array( 'post_type' => 'portfolio', 'posts_per_page' => 10 ) ); 
 
-                                    <div class="project-container">
-                                        <img src="/assets/images/portfolio1.png" alt="Portfolio Project">
-                                        <div class="overlay">
-                                                <h3>Project name</h3>
-                                                <p class="desc">Project description
-                                                </p>
-                                                <a href="#" class="more">Learn more</a>
-                                            <div class="tags">
-                                                <p class="tag">jQuery</p>
-                                                <p class="tag">Bootstrap</p>
-                                            </div>
-                                        </div>
-                                      
-                                    </div>
+                                    while ( $loop->have_posts() ) : $loop->the_post();
 
-                                    <div class="project-container">
-                                        <img src="/assets/images/portfolio1.png" alt="Portfolio Project">
-                                        <div class="overlay">
-                                                <h3>Project name</h3>
-                                                <p class="desc">Project description
-                                                </p>
-                                                <a href="#" class="more">Learn more</a>
-                                            <div class="tags">
-                                                <p class="tag">jQuery</p>
-                                                <p class="tag">Bootstrap</p>
-                                            </div>
-                                        </div>
-                                      
-                                    </div>
-
-                                    <div class="project-container">
-                                        <img src="/assets/images/portfolio1.png" alt="Portfolio Project">
-                                        <div class="overlay">
-                                                <h3>Project name</h3>
-                                                <p class="desc">Project description
-                                                </p>
-                                                <a href="#" class="more">Learn more</a>
-                                            <div class="tags">
-                                                <p class="tag">jQuery</p>
-                                                <p class="tag">Bootstrap</p>
-                                            </div>
-                                        </div>
-                                      
-                                    </div>
-
-                                    <div class="project-container">
-                                        <img src="/assets/images/portfolio1.png" alt="Portfolio Project">
-                                        <div class="overlay">
-                                                <h3>Project name</h3>
-                                                <p class="desc">Project description
-                                                </p>
-                                                <a href="#" class="more">Learn more</a>
-                                            <div class="tags">
-                                                <p class="tag">jQuery</p>
-                                                <p class="tag">Bootstrap</p>
-                                            </div>
-                                        </div>
-                                      
-                                    </div>
+                                    get_template_part( 'template-parts/portfolio-post-type/portfolio-content-excerpt' ); 
+                                   
+                                    ?>
+                                   <?php endwhile; ?>
+                                   
 
                                 </div>
 
@@ -182,7 +104,7 @@
 
                             </div>
                         </div>
-                        <img src="assets/images/waves.svg" class="waves">
+                        <img src="<?php echo get_template_directory_uri()?>/assets/images/waves.svg" class="waves">
             </section>
   
     <?php get_footer()?>

@@ -2,3 +2,29 @@
 [26-Feb-2022 18:17:21 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\functions.php on line 57
 [27-Feb-2022 15:44:55 UTC] PHP Parse error:  syntax error, unexpected ''theme_location'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\header.php on line 33
 [27-Feb-2022 15:52:23 UTC] PHP Parse error:  syntax error, unexpected ''container'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\header.php on line 32
+[01-Mar-2022 17:08:00 UTC] PHP Parse error:  syntax error, unexpected 'content' (T_STRING) in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\index.php on line 89
+[01-Mar-2022 17:09:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function b2w_pagination() in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\index.php:94
+Stack trace:
+#0 D:\Local\katarzynasoczka\app\public\wp-includes\template-loader.php(106): include()
+#1 D:\Local\katarzynasoczka\app\public\wp-blog-header.php(19): require_once('D:\\Local\\katarz...')
+#2 D:\Local\katarzynasoczka\app\public\index.php(17): require('D:\\Local\\katarz...')
+#3 {main}
+  thrown in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\index.php on line 94
+[01-Mar-2022 17:09:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function b2w_pagination() in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\index.php:94
+Stack trace:
+#0 D:\Local\katarzynasoczka\app\public\wp-includes\template-loader.php(106): include()
+#1 D:\Local\katarzynasoczka\app\public\wp-blog-header.php(19): require_once('D:\\Local\\katarz...')
+#2 D:\Local\katarzynasoczka\app\public\index.php(17): require('D:\\Local\\katarz...')
+#3 {main}
+  thrown in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\index.php on line 94
+[01-Mar-2022 17:09:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function b2w_pagination() in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\index.php:94
+Stack trace:
+#0 D:\Local\katarzynasoczka\app\public\wp-includes\template-loader.php(106): include()
+#1 D:\Local\katarzynasoczka\app\public\wp-blog-header.php(19): require_once('D:\\Local\\katarz...')
+#2 D:\Local\katarzynasoczka\app\public\index.php(17): require('D:\\Local\\katarz...')
+#3 {main}
+  thrown in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\index.php on line 94
+[01-Mar-2022 17:29:45 UTC] PHP Parse error:  syntax error, unexpected 'endwhile' (T_ENDWHILE), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\index.php on line 110
+[01-Mar-2022 17:31:13 UTC] PHP Parse error:  syntax error, unexpected 'endwhile' (T_ENDWHILE), expecting end of file in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\index.php on line 110
+[01-Mar-2022 17:31:51 UTC] PHP Parse error:  syntax error, unexpected 'endwhile' (T_ENDWHILE), expecting end of file in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\index.php on line 110
+[01-Mar-2022 17:46:04 UTC] PHP Parse error:  syntax error, unexpected '<' in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\index.php on line 97

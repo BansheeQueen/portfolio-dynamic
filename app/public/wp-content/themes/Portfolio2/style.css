@@ -958,6 +958,10 @@ section.portfolio .waves {
 }
 
 .projects-container .project-container .overlay {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1018,10 +1022,6 @@ section.portfolio .waves {
 }
 
 .projects-container .project-container:hover .overlay {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   transform: translate(0%, 0%);
   -webkit-transform: translate(0%, 0%);
   -moz-transform: translate(0%, 0%);
