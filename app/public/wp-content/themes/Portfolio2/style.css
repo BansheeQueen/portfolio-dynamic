@@ -1321,6 +1321,7 @@ footer.active .copyright {
   background: #69B0AC;
   width: 25vw;
   max-height: 600px;
+  padding-bottom: 50px;
 }
 
 .portfolio-sidebar h2 {
@@ -1352,14 +1353,14 @@ footer.active .copyright {
 
 article.portfolio {
   max-height: 600px;
-  overflow: auto;
+  overflow: overlay;
 }
 
 article.portfolio .link-bar {
   position: absolute;
   bottom: 0;
-  right: 20px;
-  left: 25vw;
+  left: 0vw;
+  width: 25vw;
   height: 50px;
   background: #4E4B4B;
   line-height: 50px;
@@ -1379,6 +1380,25 @@ article.portfolio .link-bar a {
 
 article.portfolio .link-bar a:hover {
   color: #345856;
+}
+
+@media only screen and (max-width: 992px) {
+  .single-portfolio main {
+    margin: 0vw;
+  }
+  .portfolio-sidebar {
+    width: 100%;
+    padding-bottom: 0px;
+    padding-top: 50px;
+  }
+  article.portfolio .link-bar {
+    top: 0;
+    width: 100%;
+  }
+  article.portfolio .link-bar figure {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 @keyframes fadeIn {

@@ -1193,6 +1193,7 @@ section {
         background: $color-cyan;
         width: 25vw;
         max-height: 600px;
+        padding-bottom: 50px;
 
         h2 {
             margin: 20px 0px;
@@ -1209,7 +1210,7 @@ section {
             letter-spacing: 1px;
             color: $color-cyan-dark;
             flex-basis: 100%;
-        };
+        }
 
         a {
             display: inline-block;
@@ -1224,13 +1225,13 @@ section {
 
     article.portfolio {
         max-height: 600px;
-        overflow: auto;
+        overflow: overlay;
 
         .link-bar {
             position: absolute;
             bottom: 0;
-            right: 20px;
-            left: 25vw;
+            left: 0vw;
+           width: 25vw;
             height: 50px;
             background: $color-dark;
             line-height: 50px;
@@ -1248,6 +1249,35 @@ section {
             }
         }
     }
+
+    @media only screen and (max-width: 992px) {
+
+        .single-portfolio {
+            main {
+                margin: 0vw;
+            }
+        }
+        .portfolio-sidebar {
+            width: 100%;
+            padding-bottom: 0px;
+            padding-top: 50px;
+        }
+        
+        article.portfolio {
+            .link-bar {
+            top: 0;
+            width: 100%;
+
+            figure {
+                padding: 0;
+                margin: 0;
+            }
+
+        }
+    }
+    }
+
+
 
     // Animations
 

@@ -15,8 +15,8 @@
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
           <div class="container">
-          <div class="row">
-          <div class="col-md-4 overflow-hidden portfolio-sidebar d-flex flex-column justify-content-center">
+          <div class="row position-relative">
+          <div class="col-lg-4 overflow-hidden portfolio-sidebar d-flex flex-column justify-content-center">
 
             <h2><?php the_title()?></h2>
           
@@ -40,7 +40,7 @@
 
                  
                  ?>
-            <div class="col-md-8 overflow-hidden post-content">
+            <div class="col-lg-8 overflow-hidden post-content">
               <article id="post-<?php the_ID()?>" <?php post_class(); ?>>
               <?php if( has_post_thumbnail() ) {
                    the_post_thumbnail(
@@ -66,5 +66,5 @@
         ?>
         </main><!-- .site-main -->
     </div><!-- .content-area -->
-    </div></div>
+
 <?php get_footer()?>

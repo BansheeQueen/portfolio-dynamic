@@ -57,24 +57,7 @@ $('.navbar-toggle').on('click', function() {
   const parralaxInstance = new Parallax(parallax);
 
 
-// // Animations on scroll
 
-// Change underline on scroll
-const underlineWidth = (name) => {
-    let scroll = 0;
-    let precentage = 0;
-    if($(window).scrollTop() + $(window).height() > $(name).offset().top) {
-        scroll = $(window).scrollTop() + $(window).height()  - $(name).offset().top - 100;
-        precentage = scroll / $(name).height() * 100;
-         $(name + ' .underline').css('width',  precentage + "%");
-        }
-}
-
-
-// Event listeners for underline animations
-$(window).on('scroll', function(){underlineWidth('.about')});
-$(window).on('scroll', function(){underlineWidth('.skills')});
-$(window).on('scroll', function(){underlineWidth('.portfolio')});
 
 // Function changing active li element in main menu
 const spyScroll = (IDName) => {
@@ -91,6 +74,8 @@ const spyScroll = (IDName) => {
 
 // Function for entrance and exit animations for sections content
 const animateSection = (animatedElement, IDName, entranceDivider = 1, exitMultiplier = 1) => {
+
+    if($(`${animatedElement}`).length !== 0) {
     // Entrance animations
         if($(window).scrollTop() + $(window).height() / entranceDivider > $(`${animatedElement}`).offset().top) {
             $(`${animatedElement}`).addClass('active');
@@ -101,8 +86,9 @@ const animateSection = (animatedElement, IDName, entranceDivider = 1, exitMultip
             if($(window).scrollTop() + $(window).height() * exitMultiplier  < $(`${animatedElement}`).offset().top) {
                 $(`${animatedElement}`).removeClass('active');
                 }
+            }}
 
-}
+
 
 
 // Entrance animations of sections content and scrollspy setup
@@ -124,3 +110,23 @@ $(window).on('scroll', function() {
 });
 
 
+// // Animations on scroll
+
+// Change underline on scroll
+const underlineWidth = (name) => {
+    let scroll = 0;
+    let precentage = 0;
+    if($(name).length !== 0) {
+    if($(window).scrollTop() + $(window).height() > $(name).offset().top) {
+        scroll = $(window).scrollTop() + $(window).height()  - $(name).offset().top - 100;
+        precentage = scroll / $(name).height() * 100;
+         $(name + ' .underline').css('width',  precentage + "%");
+        }
+    }
+}
+
+
+// Event listeners for underline animations
+$(window).on('scroll', function(){underlineWidth('.about')});
+$(window).on('scroll', function(){underlineWidth('.skills')});
+$(window).on('scroll', function(){underlineWidth('.portfolio')});
