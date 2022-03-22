@@ -1306,6 +1306,81 @@ footer.active .copyright {
   }
 }
 
+.single-portfolio main {
+  position: relative;
+  margin: 10vw;
+}
+
+.single-portfolio .post-content {
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-sidebar {
+  padding: 20px;
+  background: #69B0AC;
+  width: 25vw;
+  max-height: 600px;
+}
+
+.portfolio-sidebar h2 {
+  margin: 20px 0px;
+  color: #4E4B4B;
+  text-align: center;
+}
+
+.tag-links .features {
+  margin: 10px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #345856;
+  flex-basis: 100%;
+}
+
+.tag-links a {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px;
+  font-size: 0.8rem;
+  background-color: #345856;
+  border-radius: 500px;
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
+  -ms-border-radius: 500px;
+  -o-border-radius: 500px;
+}
+
+article.portfolio {
+  max-height: 600px;
+  overflow: auto;
+}
+
+article.portfolio .link-bar {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  left: 25vw;
+  height: 50px;
+  background: #4E4B4B;
+  line-height: 50px;
+  text-align: center;
+}
+
+article.portfolio .link-bar a {
+  display: inline-block;
+  margin: 0px 20px;
+  color: #69B0AC;
+  transition: 0.5s all linear;
+  -webkit-transition: 0.5s all linear;
+  -moz-transition: 0.5s all linear;
+  -ms-transition: 0.5s all linear;
+  -o-transition: 0.5s all linear;
+}
+
+article.portfolio .link-bar a:hover {
+  color: #345856;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

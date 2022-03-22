@@ -28,3 +28,96 @@ Stack trace:
 [01-Mar-2022 17:31:13 UTC] PHP Parse error:  syntax error, unexpected 'endwhile' (T_ENDWHILE), expecting end of file in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\index.php on line 110
 [01-Mar-2022 17:31:51 UTC] PHP Parse error:  syntax error, unexpected 'endwhile' (T_ENDWHILE), expecting end of file in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\index.php on line 110
 [01-Mar-2022 17:46:04 UTC] PHP Parse error:  syntax error, unexpected '<' in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\index.php on line 97
+[20-Mar-2022 16:04:02 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\single-portfolio.php on line 41
+[20-Mar-2022 16:12:32 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\single-portfolio.php on line 34
+[20-Mar-2022 16:12:32 UTC] PHP Stack trace:
+[20-Mar-2022 16:12:32 UTC] PHP   1. {main}() D:\Local\katarzynasoczka\app\public\index.php:0
+[20-Mar-2022 16:12:32 UTC] PHP   2. require() D:\Local\katarzynasoczka\app\public\index.php:17
+[20-Mar-2022 16:12:32 UTC] PHP   3. require_once() D:\Local\katarzynasoczka\app\public\wp-blog-header.php:19
+[20-Mar-2022 16:12:32 UTC] PHP   4. include() D:\Local\katarzynasoczka\app\public\wp-includes\template-loader.php:106
+[22-Mar-2022 15:15:06 UTC] PHP Warning:  Use of undefined constant ‘excerpt_length’ - assumed '‘excerpt_length’' (this will throw an Error in a future version of PHP) in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\functions.php on line 72
+[22-Mar-2022 15:15:06 UTC] PHP Stack trace:
+[22-Mar-2022 15:15:06 UTC] PHP   1. {main}() D:\Local\katarzynasoczka\app\public\index.php:0
+[22-Mar-2022 15:15:06 UTC] PHP   2. require() D:\Local\katarzynasoczka\app\public\index.php:17
+[22-Mar-2022 15:15:06 UTC] PHP   3. require_once() D:\Local\katarzynasoczka\app\public\wp-blog-header.php:13
+[22-Mar-2022 15:15:06 UTC] PHP   4. require_once() D:\Local\katarzynasoczka\app\public\wp-load.php:50
+[22-Mar-2022 15:15:06 UTC] PHP   5. require_once() D:\Local\katarzynasoczka\app\public\wp-config.php:77
+[22-Mar-2022 15:15:06 UTC] PHP   6. include() D:\Local\katarzynasoczka\app\public\wp-settings.php:555
+[22-Mar-2022 15:15:06 UTC] PHP Warning:  Use of undefined constant ‘my_excerpt_length’ - assumed '‘my_excerpt_length’' (this will throw an Error in a future version of PHP) in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\functions.php on line 72
+[22-Mar-2022 15:15:06 UTC] PHP Stack trace:
+[22-Mar-2022 15:15:06 UTC] PHP   1. {main}() D:\Local\katarzynasoczka\app\public\index.php:0
+[22-Mar-2022 15:15:06 UTC] PHP   2. require() D:\Local\katarzynasoczka\app\public\index.php:17
+[22-Mar-2022 15:15:06 UTC] PHP   3. require_once() D:\Local\katarzynasoczka\app\public\wp-blog-header.php:13
+[22-Mar-2022 15:15:06 UTC] PHP   4. require_once() D:\Local\katarzynasoczka\app\public\wp-load.php:50
+[22-Mar-2022 15:15:06 UTC] PHP   5. require_once() D:\Local\katarzynasoczka\app\public\wp-config.php:77
+[22-Mar-2022 15:15:06 UTC] PHP   6. include() D:\Local\katarzynasoczka\app\public\wp-settings.php:555
+[22-Mar-2022 15:15:07 UTC] PHP Warning:  Use of undefined constant ‘excerpt_length’ - assumed '‘excerpt_length’' (this will throw an Error in a future version of PHP) in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\functions.php on line 72
+[22-Mar-2022 15:15:07 UTC] PHP Stack trace:
+[22-Mar-2022 15:15:07 UTC] PHP   1. {main}() D:\Local\katarzynasoczka\app\public\index.php:0
+[22-Mar-2022 15:15:07 UTC] PHP   2. require() D:\Local\katarzynasoczka\app\public\index.php:17
+[22-Mar-2022 15:15:07 UTC] PHP   3. require_once() D:\Local\katarzynasoczka\app\public\wp-blog-header.php:13
+[22-Mar-2022 15:15:07 UTC] PHP   4. require_once() D:\Local\katarzynasoczka\app\public\wp-load.php:50
+[22-Mar-2022 15:15:07 UTC] PHP   5. require_once() D:\Local\katarzynasoczka\app\public\wp-config.php:77
+[22-Mar-2022 15:15:07 UTC] PHP   6. include() D:\Local\katarzynasoczka\app\public\wp-settings.php:555
+[22-Mar-2022 15:15:07 UTC] PHP Warning:  Use of undefined constant ‘my_excerpt_length’ - assumed '‘my_excerpt_length’' (this will throw an Error in a future version of PHP) in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\functions.php on line 72
+[22-Mar-2022 15:15:07 UTC] PHP Stack trace:
+[22-Mar-2022 15:15:07 UTC] PHP   1. {main}() D:\Local\katarzynasoczka\app\public\index.php:0
+[22-Mar-2022 15:15:07 UTC] PHP   2. require() D:\Local\katarzynasoczka\app\public\index.php:17
+[22-Mar-2022 15:15:07 UTC] PHP   3. require_once() D:\Local\katarzynasoczka\app\public\wp-blog-header.php:13
+[22-Mar-2022 15:15:07 UTC] PHP   4. require_once() D:\Local\katarzynasoczka\app\public\wp-load.php:50
+[22-Mar-2022 15:15:07 UTC] PHP   5. require_once() D:\Local\katarzynasoczka\app\public\wp-config.php:77
+[22-Mar-2022 15:15:07 UTC] PHP   6. include() D:\Local\katarzynasoczka\app\public\wp-settings.php:555
+[22-Mar-2022 15:15:07 UTC] PHP Warning:  Use of undefined constant ‘excerpt_length’ - assumed '‘excerpt_length’' (this will throw an Error in a future version of PHP) in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\functions.php on line 72
+[22-Mar-2022 15:15:07 UTC] PHP Stack trace:
+[22-Mar-2022 15:15:07 UTC] PHP   1. {main}() D:\Local\katarzynasoczka\app\public\index.php:0
+[22-Mar-2022 15:15:07 UTC] PHP   2. require() D:\Local\katarzynasoczka\app\public\index.php:17
+[22-Mar-2022 15:15:07 UTC] PHP   3. require_once() D:\Local\katarzynasoczka\app\public\wp-blog-header.php:13
+[22-Mar-2022 15:15:07 UTC] PHP   4. require_once() D:\Local\katarzynasoczka\app\public\wp-load.php:50
+[22-Mar-2022 15:15:07 UTC] PHP   5. require_once() D:\Local\katarzynasoczka\app\public\wp-config.php:77
+[22-Mar-2022 15:15:07 UTC] PHP   6. include() D:\Local\katarzynasoczka\app\public\wp-settings.php:555
+[22-Mar-2022 15:15:07 UTC] PHP Warning:  Use of undefined constant ‘my_excerpt_length’ - assumed '‘my_excerpt_length’' (this will throw an Error in a future version of PHP) in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\functions.php on line 72
+[22-Mar-2022 15:15:07 UTC] PHP Stack trace:
+[22-Mar-2022 15:15:07 UTC] PHP   1. {main}() D:\Local\katarzynasoczka\app\public\index.php:0
+[22-Mar-2022 15:15:07 UTC] PHP   2. require() D:\Local\katarzynasoczka\app\public\index.php:17
+[22-Mar-2022 15:15:07 UTC] PHP   3. require_once() D:\Local\katarzynasoczka\app\public\wp-blog-header.php:13
+[22-Mar-2022 15:15:07 UTC] PHP   4. require_once() D:\Local\katarzynasoczka\app\public\wp-load.php:50
+[22-Mar-2022 15:15:07 UTC] PHP   5. require_once() D:\Local\katarzynasoczka\app\public\wp-config.php:77
+[22-Mar-2022 15:15:07 UTC] PHP   6. include() D:\Local\katarzynasoczka\app\public\wp-settings.php:555
+[22-Mar-2022 15:15:07 UTC] PHP Warning:  Use of undefined constant ‘excerpt_length’ - assumed '‘excerpt_length’' (this will throw an Error in a future version of PHP) in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\functions.php on line 72
+[22-Mar-2022 15:15:07 UTC] PHP Stack trace:
+[22-Mar-2022 15:15:07 UTC] PHP   1. {main}() D:\Local\katarzynasoczka\app\public\index.php:0
+[22-Mar-2022 15:15:07 UTC] PHP   2. require() D:\Local\katarzynasoczka\app\public\index.php:17
+[22-Mar-2022 15:15:07 UTC] PHP   3. require_once() D:\Local\katarzynasoczka\app\public\wp-blog-header.php:13
+[22-Mar-2022 15:15:07 UTC] PHP   4. require_once() D:\Local\katarzynasoczka\app\public\wp-load.php:50
+[22-Mar-2022 15:15:07 UTC] PHP   5. require_once() D:\Local\katarzynasoczka\app\public\wp-config.php:77
+[22-Mar-2022 15:15:07 UTC] PHP   6. include() D:\Local\katarzynasoczka\app\public\wp-settings.php:555
+[22-Mar-2022 15:15:07 UTC] PHP Warning:  Use of undefined constant ‘my_excerpt_length’ - assumed '‘my_excerpt_length’' (this will throw an Error in a future version of PHP) in D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\functions.php on line 72
+[22-Mar-2022 15:15:07 UTC] PHP Stack trace:
+[22-Mar-2022 15:15:07 UTC] PHP   1. {main}() D:\Local\katarzynasoczka\app\public\index.php:0
+[22-Mar-2022 15:15:07 UTC] PHP   2. require() D:\Local\katarzynasoczka\app\public\index.php:17
+[22-Mar-2022 15:15:07 UTC] PHP   3. require_once() D:\Local\katarzynasoczka\app\public\wp-blog-header.php:13
+[22-Mar-2022 15:15:07 UTC] PHP   4. require_once() D:\Local\katarzynasoczka\app\public\wp-load.php:50
+[22-Mar-2022 15:15:07 UTC] PHP   5. require_once() D:\Local\katarzynasoczka\app\public\wp-config.php:77
+[22-Mar-2022 15:15:07 UTC] PHP   6. include() D:\Local\katarzynasoczka\app\public\wp-settings.php:555
+[22-Mar-2022 15:15:07 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\functions.php:72) in D:\Local\katarzynasoczka\app\public\wp-includes\pluggable.php on line 1355
+[22-Mar-2022 15:15:07 UTC] PHP Stack trace:
+[22-Mar-2022 15:15:07 UTC] PHP   1. {main}() D:\Local\katarzynasoczka\app\public\index.php:0
+[22-Mar-2022 15:15:07 UTC] PHP   2. require() D:\Local\katarzynasoczka\app\public\index.php:17
+[22-Mar-2022 15:15:07 UTC] PHP   3. require_once() D:\Local\katarzynasoczka\app\public\wp-blog-header.php:19
+[22-Mar-2022 15:15:07 UTC] PHP   4. do_action() D:\Local\katarzynasoczka\app\public\wp-includes\template-loader.php:45
+[22-Mar-2022 15:15:07 UTC] PHP   5. WP_Hook->do_action() D:\Local\katarzynasoczka\app\public\wp-includes\plugin.php:474
+[22-Mar-2022 15:15:07 UTC] PHP   6. WP_Hook->apply_filters() D:\Local\katarzynasoczka\app\public\wp-includes\class-wp-hook.php:331
+[22-Mar-2022 15:15:07 UTC] PHP   7. do_favicon() D:\Local\katarzynasoczka\app\public\wp-includes\class-wp-hook.php:307
+[22-Mar-2022 15:15:07 UTC] PHP   8. wp_redirect() D:\Local\katarzynasoczka\app\public\wp-includes\functions.php:1713
+[22-Mar-2022 15:15:07 UTC] PHP   9. header() D:\Local\katarzynasoczka\app\public\wp-includes\pluggable.php:1355
+[22-Mar-2022 15:15:07 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\Local\katarzynasoczka\app\public\wp-content\themes\Portfolio2\functions.php:72) in D:\Local\katarzynasoczka\app\public\wp-includes\pluggable.php on line 1358
+[22-Mar-2022 15:15:07 UTC] PHP Stack trace:
+[22-Mar-2022 15:15:07 UTC] PHP   1. {main}() D:\Local\katarzynasoczka\app\public\index.php:0
+[22-Mar-2022 15:15:07 UTC] PHP   2. require() D:\Local\katarzynasoczka\app\public\index.php:17
+[22-Mar-2022 15:15:07 UTC] PHP   3. require_once() D:\Local\katarzynasoczka\app\public\wp-blog-header.php:19
+[22-Mar-2022 15:15:07 UTC] PHP   4. do_action() D:\Local\katarzynasoczka\app\public\wp-includes\template-loader.php:45
+[22-Mar-2022 15:15:07 UTC] PHP   5. WP_Hook->do_action() D:\Local\katarzynasoczka\app\public\wp-includes\plugin.php:474
+[22-Mar-2022 15:15:07 UTC] PHP   6. WP_Hook->apply_filters() D:\Local\katarzynasoczka\app\public\wp-includes\class-wp-hook.php:331
+[22-Mar-2022 15:15:07 UTC] PHP   7. do_favicon() D:\Local\katarzynasoczka\app\public\wp-includes\class-wp-hook.php:307
+[22-Mar-2022 15:15:07 UTC] PHP   8. wp_redirect() D:\Local\katarzynasoczka\app\public\wp-includes\functions.php:1713
+[22-Mar-2022 15:15:07 UTC] PHP   9. header() D:\Local\katarzynasoczka\app\public\wp-includes\pluggable.php:1358

@@ -19,7 +19,7 @@
                         
                 </form>
             </div>
-        </div>git 
+        </div>
         <div class="row">
         <div class="col-xs-12 copyright"><?php echo wp_kses_post( get_theme_mod( 'footer_copyright', '&copy; Katarzyna Soczka ' ) ); echo date('Y'); ?></div>
     </div>

@@ -63,3 +63,10 @@ if ( ! function_exists( 'myportfolio_theme_setup' ) ) :
     if( !defined('THEME_IMG_PATH')){
         define( 'THEME_IMG_PATH', get_stylesheet_directory_uri() . '/images' );
        }
+
+
+    // Custom excerpt length
+    function my_excerpt_length($length){
+        return 10;
+        }
+        add_filter('excerpt_length', 'my_excerpt_length');
